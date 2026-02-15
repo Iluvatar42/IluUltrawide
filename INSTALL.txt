@@ -2,38 +2,87 @@
   IluUltrawide - Installation Instructions
 ═══════════════════════════════════════════════════════════════
 
+QUICK INSTALL
+───────────────────────────────────────────────────────────────
+1. Make sure BepInEx is installed (see below if not)
+2. Copy the BepInEx folder to your game directory
+3. Merge when prompted (don't replace)
+4. Launch the game and press F10 to configure
+
+STEP-BY-STEP INSTALL
+───────────────────────────────────────────────────────────────
+
 STEP 1: Install BepInEx (if not already installed)
-───────────────────────────────────────────────────────────────
-1. Download BepInEx 5.4.23 (x64) from:
-   https://github.com/BepInEx/BepInEx/releases
+   1. Download BepInEx 5.4.23+ (x64) from:
+      https://github.com/BepInEx/BepInEx/releases
+   
+   2. Extract to your Tailor Simulator folder:
+      (Where "Tailor Simulator.exe" is located)
+   
+   3. Run the game once, then close it
+      (This generates BepInEx folders)
 
-2. Extract the ZIP to your Tailor Simulator game folder
-   (Where "Tailor Simulator.exe" is located)
+STEP 2: Install IluUltrawide
+   1. From this package, copy the "BepInEx" folder
+   
+   2. Paste into your Tailor Simulator game folder
+   
+   3. When prompted, choose "Merge" or "Yes to All"
+      
+   Final structure:
+   Tailor Simulator/
+   ├── Tailor Simulator.exe
+   └── BepInEx/
+       └── plugins/
+           └── IluUltrawide/
+               └── IluUltrawide.dll  ✓
 
-3. Run the game once to generate BepInEx folders
-   Then close the game
+STEP 3: Configure
+   1. Launch Tailor Simulator
+   2. Press F10 to open settings overlay
+   3. Select your resolution or enter custom
+   4. Adjust UI Scale to preference
+   5. Enjoy!
 
-STEP 2: Install IluUltrawide Plugin
-───────────────────────────────────────────────────────────────
-1. Navigate to: <Game Folder>/BepInEx/plugins/
+═══════════════════════════════════════════════════════════════
+  Settings Menu (F10)
+═══════════════════════════════════════════════════════════════
 
-2. Create a folder named "IluUltrawide"
+RESOLUTION PRESETS
+   Click any preset button for instant resolution change
+   • 1920×1080 (16:9)
+   • 2560×1440 (16:9)  
+   • 2560×1080 (21:9)
+   • 3440×1440 (21:9) ← Default
+   • 3840×1080 (32:9)
+   • 5120×1440 (32:9)
+   • 3840×2160 (4K)
 
-3. Copy IluUltrawide.dll into that folder
+CUSTOM RESOLUTION
+   Enter Width and Height, then click Apply
 
-   Result: <Game>/BepInEx/plugins/IluUltrawide/IluUltrawide.dll
+UI SCALE
+   Slider: 0.25 to 2.5
+   • 1.0 = Auto-scaled for your aspect ratio
+   • < 1.0 = Smaller UI
+   • > 1.0 = Larger UI
+   
+   Recommended: 0.7 - 1.2 for most setups
 
-STEP 3: Launch and Configure
-───────────────────────────────────────────────────────────────
-1. Launch Tailor Simulator
+FORCE APPLY
+   Reapplies all settings immediately
 
-2. Press F10 to open the settings overlay
+═══════════════════════════════════════════════════════════════
+  Configuration File
+═══════════════════════════════════════════════════════════════
 
-3. Choose your resolution or enter a custom one
+Location: BepInEx/config/com.ultrawide.tailorsimulator.cfg
 
-4. Adjust UI Scale to your preference
-
-5. Settings are saved automatically!
+You can manually edit:
+• Default resolution
+• Default UI scale
+• Keybind (default: F10)
+• Enable/disable features
 
 ═══════════════════════════════════════════════════════════════
   Troubleshooting
@@ -43,14 +92,36 @@ Q: Game won't start or crashes
 A: Check BepInEx/LogOutput.log for errors
 
 Q: Plugin not loading
-A: Make sure folder structure is:
+A: Verify folder structure:
    BepInEx/plugins/IluUltrawide/IluUltrawide.dll
 
-Q: UI is too small
-A: Press F10 and increase UI Scale slider to 1.2-1.5
-
 Q: F10 doesn't open menu
-A: Check BepInEx/config/com.ultrawide.tailorsimulator.cfg
-   and verify ToggleKey setting
+A: Edit BepInEx/config/com.ultrawide.tailorsimulator.cfg
+   Change ToggleKey setting
+
+Q: UI too small/large
+A: Press F10 and adjust UI Scale slider
+
+Q: Resolution not applying
+A: Make sure your monitor supports the resolution
+   Try using the in-game settings overlay (F10)
+
+Q: Black bars still visible
+A: Set RemoveBlackBars = true in config file
+   Click "Force Apply" in settings menu (F10)
+
+═══════════════════════════════════════════════════════════════
+  Uninstalling
+═══════════════════════════════════════════════════════════════
+
+Delete: BepInEx/plugins/IluUltrawide/
+
+═══════════════════════════════════════════════════════════════
+  Need Help?
+═══════════════════════════════════════════════════════════════
+
+Check BepInEx/LogOutput.log for detailed error messages
+See README.md for full documentation
+See Source/ folder to build from source
 
 ═══════════════════════════════════════════════════════════════

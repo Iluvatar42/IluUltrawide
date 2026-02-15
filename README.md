@@ -1,131 +1,147 @@
 # IluUltrawide - Tailor Simulator Ultrawide Fix
 
-A BepInEx plugin that adds ultrawide (21:9, 32:9) and custom resolution support to Tailor Simulator.
+A BepInEx plugin that adds full ultrawide and custom resolution support to Tailor Simulator with live-adjustable settings.
 
 ## Features
 
-- **Custom Resolution Support**: Play at any resolution including 3440×1440, 5120×1440, and more
-- **UI Scaling**: Automatic and manual UI scaling to prevent stretched or tiny UI elements
-- **In-Game Settings Menu**: Press F10 to open an overlay with live-adjustable settings
-- **Black Bar Removal**: Removes letterboxing and pillarboxing
-- **Aspect Ratio Fixes**: Properly scales UI elements for ultrawide displays
+✅ **Custom Resolution Support** - Play at 3440×1440, 5120×1440, or any resolution  
+✅ **In-Game Settings Menu** - Press F10 for live-adjustable overlay  
+✅ **UI Scaling** - Automatic + manual scaling prevents stretched UI  
+✅ **Resolution Presets** - One-click common ultrawide resolutions  
+✅ **Black Bar Removal** - Eliminates letterboxing and pillarboxing  
+✅ **Aspect Ratio Fixes** - Proper UI element scaling for all aspect ratios
 
 ## Installation
 
 ### Prerequisites
-1. **BepInEx 5.4.23** or later
-   - Download from: https://github.com/BepInEx/BepInEx/releases
-   - Install the `BepInEx_win_x64_5.4.23.5.zip` version
-   - Extract to your Tailor Simulator game folder
 
-### Plugin Installation
-1. Download the latest release
-2. Extract `IluUltrawide.dll` to:
-   ```
-   <Game Folder>/BepInEx/plugins/IluUltrawide/
-   ```
-3. Launch the game
+**BepInEx 5.4.23+** (x64 version)
+- Download: https://github.com/BepInEx/BepInEx/releases
+- Extract to Tailor Simulator folder
+- Run game once to generate folders
+
+### Quick Install
+
+1. Copy the `BepInEx` folder from this package
+2. Paste into your Tailor Simulator game folder
+3. Merge folders when prompted
+4. Launch game and press **F10** to configure
+
+See `INSTALL.txt` for detailed instructions.
 
 ## Usage
 
-### First Launch
-The plugin will automatically:
-- Set your resolution to 3440×1440 (configurable)
-- Apply UI scaling
-- Remove black bars
-
 ### In-Game Settings (F10)
+
 Press **F10** to open the settings overlay:
 
-**Resolution:**
-- Click preset buttons for common resolutions
-- Use custom W/H fields for any resolution
-- Click "Apply" to change instantly
+**Resolution Presets:**
+- 1920×1080 (16:9)
+- 2560×1440 (16:9)
+- 2560×1080 (21:9)
+- **3440×1440 (21:9)** ← Default
+- 3840×1080 (32:9)
+- 5120×1440 (32:9)
+- 3840×2160 (4K)
+
+**Custom Resolution:**
+- Enter Width and Height manually
+- Click "Apply" for instant change
 
 **UI Scale:**
-- Use the slider or type a value (0.25 - 2.5)
-- 1.0 = automatic scaling for your aspect ratio
-- Lower values = smaller UI
-- Higher values = larger UI
+- Slider or text input (0.25 - 2.5)
+- 1.0 = Automatic for your aspect ratio
+- Recommended: 0.7 - 1.2
 
 **Force Apply:**
-- Click to reapply all settings immediately
+- Reapplies all settings immediately
 
 ### Configuration File
-Settings are saved to:
+
+Persistent settings saved to:
 ```
-<Game Folder>/BepInEx/config/com.ultrawide.tailorsimulator.cfg
+BepInEx/config/com.ultrawide.tailorsimulator.cfg
 ```
 
-You can edit this file to change:
+Edit to change:
 - Default resolution
 - UI scale multiplier
-- Keybind for settings menu (default: F10)
+- F10 keybind
 - Enable/disable features
 
 ## Troubleshooting
 
-**UI is too small/large:**
-- Press F10
-- Adjust the UI Scale slider
-- Try values between 0.7 - 1.5
+| Issue | Solution |
+|-------|----------|
+| Plugin not loading | Check folder: `BepInEx/plugins/IluUltrawide/IluUltrawide.dll` |
+| UI too small/large | Press F10, adjust UI Scale slider |
+| F10 doesn't work | Edit config file, change ToggleKey |
+| Resolution not applying | Use F10 menu instead of in-game settings |
+| Black bars visible | Enable RemoveBlackBars in config, click Force Apply |
 
-**Resolution not applying:**
-- Check BepInEx/LogOutput.log for errors
-- Make sure your monitor supports the resolution
-- Try using borderless window mode
-
-**Settings overlay won't open:**
-- Default key is F10
-- Check config file to see if keybind was changed
-- Make sure BepInEx is installed correctly
+**Log File:** `BepInEx/LogOutput.log` - check for errors
 
 ## Building from Source
 
-See `Source/` folder for complete source code.
+See `Source/BUILD.md` for complete build instructions.
 
-### Requirements
-- .NET SDK 8.0+
-- .NET Framework 4.6.2 Developer Pack
-- Visual Studio Code (recommended) or Visual Studio
-
-### Build Steps
-1. Copy Unity and BepInEx DLLs to `Source/lib/`:
-   - From `<Game>/Tailor Simulator_Data/Managed/`:
-     - UnityEngine.dll
-     - UnityEngine.CoreModule.dll
-     - UnityEngine.UI.dll
-     - UnityEngine.IMGUIModule.dll
-     - UnityEngine.InputLegacyModule.dll
-   - From `<Game>/BepInEx/core/`:
-     - BepInEx.dll
-     - 0Harmony.dll
-
-2. Build:
-   ```bash
-   cd Source
-   dotnet build -c Release
-   ```
-
+**Quick Build:**
+1. Copy game DLLs to `Source/lib/` (see `Source/lib/README.txt`)
+2. Run: `dotnet build -c Release` in `Source/` folder
 3. Output: `Source/bin/Release/netstandard2.1/IluUltrawide.dll`
 
-## Credits
+## Technical Details
 
-- Created by: Iluvatar
-- BepInEx: https://github.com/BepInEx/BepInEx
-- Harmony: https://github.com/pardeike/Harmony
+- **Framework:** netstandard 2.1
+- **Dependencies:** BepInEx 5.4.23+, Harmony
+- **Target Game:** Tailor Simulator (Unity 2022.3.46)
+- **Features:**
+  - Resolution enforcement via Harmony patches
+  - UI CanvasScaler overrides
+  - AspectRatioFitter patches
+  - Camera viewport adjustments
+  - IMGUI settings overlay
 
-## License
+## Files Structure
 
-This project is provided as-is for personal use. Source code is included for educational purposes and modification.
+```
+IluUltrawide/
+├── INSTALL.txt                    # Installation guide
+├── README.md                      # This file
+├── BepInEx/
+│   └── plugins/
+│       └── IluUltrawide/
+│           └── IluUltrawide.dll   # Compiled plugin
+└── Source/
+    ├── BUILD.md                   # Build instructions
+    ├── Plugin.cs                  # Main source code
+    ├── MyPluginInfo.cs            # Plugin metadata
+    ├── IluUltrawide.csproj        # Project file
+    └── lib/
+        └── README.txt             # DLL requirements
+```
 
 ## Changelog
 
 ### v1.0.0 (2026-02-15)
 - Initial release
-- Ultrawide resolution support (21:9, 32:9)
-- Custom resolution input
-- UI scaling with manual adjustment
-- In-game settings overlay
+- Ultrawide resolution support (21:9, 32:9, custom)
+- In-game settings overlay (F10)
+- UI scaling with live adjustment
+- Resolution presets + custom input
 - Black bar removal
 - Aspect ratio fitter patches
+
+## Credits
+
+- **Author:** Iluvatar
+- **BepInEx:** https://github.com/BepInEx/BepInEx
+- **Harmony:** https://github.com/pardeike/Harmony
+
+## License
+
+Provided as-is for personal use. Source code included for educational purposes and modification.
+
+## Support
+
+For issues, check `BepInEx/LogOutput.log` for error details.
