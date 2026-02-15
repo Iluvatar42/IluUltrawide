@@ -1,5 +1,7 @@
 # IluUltrawide - Tailor Simulator Ultrawide Fix
 
+WARNING! This is 100% vibe code. I'm not a programmer. But it works for me. Use at own risk. Thank Claude AI.
+
 A BepInEx plugin that adds full ultrawide and custom resolution support to Tailor Simulator with live-adjustable settings.
 
 ## Features
