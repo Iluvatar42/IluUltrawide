@@ -5,7 +5,7 @@
 
 WARNING! This is 100% vibe code. I'm not a programmer. But it works for me. Use at own risk. Thank Claude AI.
 
-
+![Ultrawide Gameplay](settings.jpg)
 ![Settings Menu](3440x1440.Scale1.jpg)
 ![Ultrawide Gameplay](3440x144_Scale.5.jpg)
 
