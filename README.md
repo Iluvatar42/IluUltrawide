@@ -62,7 +62,7 @@ Press **F10** to open the settings overlay:
 
 Persistent settings saved to:
 ```
-BepInEx/config/com.ultrawide.tailorsimulator.cfg
+BepInEx/config/IluUltrawide.cfg
 ```
 
 Edit to change:
