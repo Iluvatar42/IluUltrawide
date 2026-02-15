@@ -1,0 +1,56 @@
+═══════════════════════════════════════════════════════════════
+  IluUltrawide - Installation Instructions
+═══════════════════════════════════════════════════════════════
+
+STEP 1: Install BepInEx (if not already installed)
+───────────────────────────────────────────────────────────────
+1. Download BepInEx 5.4.23 (x64) from:
+   https://github.com/BepInEx/BepInEx/releases
+
+2. Extract the ZIP to your Tailor Simulator game folder
+   (Where "Tailor Simulator.exe" is located)
+
+3. Run the game once to generate BepInEx folders
+   Then close the game
+
+STEP 2: Install IluUltrawide Plugin
+───────────────────────────────────────────────────────────────
+1. Navigate to: <Game Folder>/BepInEx/plugins/
+
+2. Create a folder named "IluUltrawide"
+
+3. Copy IluUltrawide.dll into that folder
+
+   Result: <Game>/BepInEx/plugins/IluUltrawide/IluUltrawide.dll
+
+STEP 3: Launch and Configure
+───────────────────────────────────────────────────────────────
+1. Launch Tailor Simulator
+
+2. Press F10 to open the settings overlay
+
+3. Choose your resolution or enter a custom one
+
+4. Adjust UI Scale to your preference
+
+5. Settings are saved automatically!
+
+═══════════════════════════════════════════════════════════════
+  Troubleshooting
+═══════════════════════════════════════════════════════════════
+
+Q: Game won't start or crashes
+A: Check BepInEx/LogOutput.log for errors
+
+Q: Plugin not loading
+A: Make sure folder structure is:
+   BepInEx/plugins/IluUltrawide/IluUltrawide.dll
+
+Q: UI is too small
+A: Press F10 and increase UI Scale slider to 1.2-1.5
+
+Q: F10 doesn't open menu
+A: Check BepInEx/config/com.ultrawide.tailorsimulator.cfg
+   and verify ToggleKey setting
+
+═══════════════════════════════════════════════════════════════
