@@ -1,6 +1,14 @@
 # IluUltrawide - Tailor Simulator Ultrawide Fix
 
+![GitHub release](https://img.shields.io/github/v/release/Iluvatar42/IluUltrawide)
+![BepInEx](https://img.shields.io/badge/BepInEx-5.4.23+-blue)
+
 WARNING! This is 100% vibe code. I'm not a programmer. But it works for me. Use at own risk. Thank Claude AI.
+
+
+![Settings Menu](3440x1440.Scale1.jpg)
+![Ultrawide Gameplay](3440x144_Scale.5.jpg)
+
 
 A BepInEx plugin that adds full ultrawide and custom resolution support to Tailor Simulator with live-adjustable settings.
 
